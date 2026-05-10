@@ -1,0 +1,41 @@
+<section id="projects" class="projects-section">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+        @for (project of projects; track project.title) {
+        <div class="project-card glass-card">
+            <div class="project-number">{{ $index + 1 < 10 ? '0' + ($index + 1) : $index + 1 }}</div>
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tags">
+                        @for (tag of project.tags; track tag) {
+                        <span class="tag">{{ tag }}</span>
+                        }
+                    </div>
+                    <div class="project-links">
+                        @if (project.github) {
+                        <a [href]="project.github" class="project-link" target="_blank" rel="noopener">
+                            <span>GitHub</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        }
+                        @if (project.live) {
+                        <a [href]="project.live" class="project-link live" target="_blank" rel="noopener">
+                            <span>Live Demo</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        }
+                    </div>
+            </div>
+            }
+        </div>
+</section>

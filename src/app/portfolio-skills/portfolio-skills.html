@@ -1,0 +1,43 @@
+<section id="skills" class="skills-section">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-grid">
+        @for (category of categories; track category.title) {
+        <div class="skill-category glass-card">
+            <div class="category-header">
+                <span class="category-icon">{{ category.icon }}</span>
+                <h3 class="category-title">{{ category.title }}</h3>
+            </div>
+            <div class="skill-list">
+                @for (skill of category.skills; track skill.name) {
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">{{ skill.name }}</span>
+                        <span class="skill-percent">{{ skill.level }}%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" [style.width.%]="skill.level"></div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Certifications -->
+    <div class="certifications-block">
+        <h3 class="subsection-title">Certifications</h3>
+        <div class="certs-grid">
+            @for (cert of certifications; track cert.title) {
+            <div class="cert-card glass-card">
+                <div class="cert-icon">🎓</div>
+                <div class="cert-info">
+                    <h4 class="cert-title">{{ cert.title }}</h4>
+                    <p class="cert-issuer">{{ cert.issuer }}</p>
+                    <span class="cert-platform">{{ cert.platform }}</span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

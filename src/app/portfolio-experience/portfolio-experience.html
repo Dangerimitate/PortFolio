@@ -1,0 +1,33 @@
+<section id="experience" class="experience-section">
+    <h2 class="section-title">Work Experience</h2>
+
+    @for (exp of experiences; track exp.company) {
+    <div class="experience-card glass-card">
+        <div class="exp-header">
+            <div class="exp-info">
+                <h3 class="exp-company">{{ exp.company }}</h3>
+                <span class="exp-role">{{ exp.role }}</span>
+            </div>
+            <div class="exp-meta">
+                <span class="exp-period">{{ exp.period }}</span>
+                <span class="exp-location">📍 {{ exp.location }}</span>
+            </div>
+        </div>
+
+        <div class="exp-projects">
+            <h4 class="projects-label">Key Projects</h4>
+            <div class="project-list">
+                @for (project of exp.projects; track project.name) {
+                <div class="exp-project-item">
+                    <span class="project-marker"></span>
+                    <div>
+                        <strong class="project-name">{{ project.name }}</strong>
+                        <p class="project-desc">{{ project.description }}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</section>

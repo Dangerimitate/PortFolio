@@ -1,0 +1,20 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <a href="#" class="nav-logo">RE<span class="logo-dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#hero" [class.active]="activeSection === 'hero'">Home</a></li>
+    <li><a href="#about" [class.active]="activeSection === 'about'">About</a></li>
+    <li><a href="#experience" [class.active]="activeSection === 'experience'">Experience</a></li>
+    <li><a href="#skills" [class.active]="activeSection === 'skills'">Skills</a></li>
+    <li><a href="#projects" [class.active]="activeSection === 'projects'">Projects</a></li>
+    <li><a href="#contact" [class.active]="activeSection === 'contact'">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="portfolio-container">
+  <app-portfolio-hero></app-portfolio-hero>
+  <app-portfolio-about></app-portfolio-about>
+  <app-portfolio-experience></app-portfolio-experience>
+  <app-portfolio-skills></app-portfolio-skills>
+  <app-portfolio-projects></app-portfolio-projects>
+  <app-portfolio-contact></app-portfolio-contact>
+</main>
